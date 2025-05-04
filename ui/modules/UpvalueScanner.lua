@@ -403,7 +403,9 @@ modifyElementButtons.Set.MouseButton1Click:Connect(function()
         elementTypeDropdown)
 
     if newValue ~= nil then
-        upvalueValue[selectedElement] = newValue
+setreadonly(v, false)
+upvalueValue[selectedElement] = newValue
+setreadonly(v, true)
 
         modifyElementValue.Text = ""
         modifyElement:Hide()
