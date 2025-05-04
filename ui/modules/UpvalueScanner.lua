@@ -400,7 +400,7 @@ modifyElementButtons.Set.MouseButton1Click:Connect(function()
     local newValue = setValue(
         modifyElementValue.Text, 
         upvalueValue[selectedElement], 
-        elementTypeDropdown)
+-- [MODIFIED LINE 403] Original line replaced.
 
     if newValue ~= nil then
         upvalueValue[selectedElement] = newValue
