@@ -403,8 +403,10 @@ modifyElementButtons.Set.MouseButton1Click:Connect(function()
         elementTypeDropdown)
 
     if newValue ~= nil then
-setreadonly(v, false)
-upvalueValue[selectedElement] = newValue
+local mt = getrawmetatable(v)
+setreadonly(mt, false)
+mt.__index = v
+setreadonly(mt, true)
 setreadonly(v, true)
 
         modifyElementValue.Text = ""
